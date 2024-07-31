@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">GeonamesApp</string>
+    <string name="button_text_name_wiki">WikiSearch</string>"
+    <string name="button_text_name_earthquakes">Earthquakes</string>
+    <string name="edit_text_name_wiki_str">Str</string>
+    <string name="edit_text_name_earth_north">North</string>
+    <string name="edit_text_name_earth_west">West</string>
+    <string name="edit_text_name_earth_east">East</string>
+    <string name="edit_text_name_earth_south">South</string>
+    <string name="edit_text_wiki_maxrow">MaxRow</string>
+    <string name="button_text_wiki_get">Get</string>
+    <string name="button_text_close">Close</string>"
+</resources>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <data>
+        <import type="com.ahbap.android.app.geonamesapp.view.WikiActivityListenerView"/>
+        <import type="com.ahbap.android.app.geonamesapp.geonames.entity.WikiInfo"/>
+        <import type="com.ahbap.android.app.geonamesapp.converter.MaxRowsConverter"/>
+        <import type="com.ahbap.android.app.geonamesapp.model.WikiSearchModel"/>
+        <import type="android.widget.ArrayAdapter"/>
+        <variable name="view" type="com.ahbap.android.app.geonamesapp.view.WikiActivityListenerView"/>
+        <variable name="model" type="WikiSearchModel"/>
+        <variable name="adapter" type="ArrayAdapter&lt;WikiInfo&gt;"/>
+    </data>
+<LinearLayout
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".WikiSearchActivity">
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:ems="10"
+        android:text="@={model.str}"
+        android:hint="@string/edit_text_name_wiki_str"
+        />
+
+    <EditText
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:text="@={MaxRowsConverter.INSTANCE.toStr(model.maxRow)}"
+        android:hint="@string/edit_text_wiki_maxrow"
+        />
+
+    <Button
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_text_wiki_get"
+        android:onClick="@{() -> view.handlerGetWikiSearchButtonCallback()}"
+        />
+    <Button
+       android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/button_text_close"
+        android:onClick="@{() -> view.handlerCloseButtonCallback()}"
+        />
+    <ImageView
+        android:id="@+id/viewsImg"
+        android:layout_width="350dp"
+        android:layout_height="wrap_content"
+        android:contentDescription="images"
+        android:layout_gravity="center"
+        />
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:adapter="@{adapter}"
+        />
+</LinearLayout>
+</layout>
